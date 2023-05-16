@@ -19,10 +19,10 @@ yearly <- yearly %>%
 yearly
 
 # Set the size of plots in notebook
-options(repr.plot.width=7, repr.plot.height=4)
+options(repr.plot.width = 7, repr.plot.height = 4)
 
 # Plot yearly proportion of deaths by clinic
-ggplot(yearly, aes(x = year, y= proportion_deaths, color = clinic)) +
+ggplot(yearly, aes(x = year, y = proportion_deaths, color = clinic)) +
   geom_line()
 
 # Read monthly_deaths.csv into monthly
@@ -36,7 +36,7 @@ monthly <- monthly %>%
 head(monthly)
 
 # Plot monthly proportion of deaths
-ggplot(monthly, aes( x = date, y = proportion_deaths)) +
+ggplot(monthly, aes(x = date, y = proportion_deaths)) +
   geom_line()
 
 # From this date handwashing was made mandatory at clinics
@@ -59,7 +59,7 @@ monthly_summary <- monthly %>%
 monthly_summary
 
 # Calculate a 95% Confidence Interval using a t.test
-test_result <- t.test( proportion_deaths ~ handwashing_mandatory, data = monthly)
+test_result <- t.test(proportion_deaths ~ handwashing_mandatory, data = monthly)
 test_result
 
 
